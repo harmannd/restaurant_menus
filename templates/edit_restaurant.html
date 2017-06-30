@@ -2,16 +2,24 @@
 <html>
 <head>
     <title>Edit Restaurant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Edit Restaurant</h1>
+    <div class="container">
+        <h1>Edit Restaurant</h1>
 
-    <form action="{{ url_for('editRestaurant', restaurant_id=restaurant_id) }}" method="post">
-        <label>Name: </label>
-        <input type="text" name="name" placeholder="{{ restaurant.name }}">
+        <form action="{{ url_for('editRestaurant', restaurant_id=restaurant_id) }}" method="post">
+            <div class="row">
+                <label>Name: </label>
+                <input type="text" name="name" placeholder="{{ restaurant.name }}">
+            </div>
+            <br>
 
-        <input type="submit" value="Rename">
-        <a href="{{ url_for('showRestaurants') }}">Cancel</a>
-    </form>
+            <div class="item_options">
+                <input type="submit" value="Rename">
+                <a class="link" href="{{ url_for('showRestaurants') }}">Cancel</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

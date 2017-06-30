@@ -1,0 +1,99 @@
+
+body {
+    font-family: sans-serif;
+    background-image: url('img3.jpg');
+    background-color: #333333
+}
+
+h1, h2, h3, h4 {
+    color: #FFFFFF;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+h1 {
+    border-bottom: 2px solid #eee;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+p, dd, dt, label {
+    color: #CCCCCC;
+}
+
+a {
+    text-decoration: none;
+    color:#FFFFCC;
+    font-size: .75em;
+}
+
+a:hover {
+    color: #FFFF33;
+}
+
+input[type=submit] {
+    width: 100px;
+}
+
+.flash {
+    background: #cee5F5;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item_title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.row, .column {
+    padding-top: 10px;
+}
+
+.row label {
+    width: 100px;
+}
+
+.price {
+    padding-top: 5px;
+}
+
+.item_options {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.restaurant_options {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link, .row a {
+    padding-left: 10px;
+}

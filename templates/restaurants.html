@@ -2,32 +2,37 @@
 <html>
 <head>
     <title>Restaurants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Restaurants</h1>
+    <div class="container">
+        <h1>Restaurants</h1>
+        <br>
 
-    <a href="{{ url_for('newRestaurant') }}">Add New Restaurant</a>
+        <a href="{{ url_for('newRestaurant') }}">Add New Restaurant</a>
 
-    <br>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul>
-        {% for message in messages %}
-            <li><strong>{{ message }}</strong></li>
+        <br>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash"></ul>>
+            {% for message in messages %}
+                <li><strong>{{ message }}</strong></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <br>
+
+        {% for restaurant in restaurants %}
+            <div class="restaurant_options">
+                <h3>{{ restaurant.name }}</h3>
+                <a class="link" href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a>
+                <a class="link" href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
+            </div>
+
+            <a class="view_menu" href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">View Menu</a>
+            <br><br>
         {% endfor %}
-        </ul>
-    {% endif %}
-    {% endwith %}
-    <br>
-
-    {% for restaurant in restaurants %}
-        <h3>{{restaurant.name}}</h3>
-
-        <a href="{{ url_for('showMenu', restaurant_id=restaurant.id) }}">View Menu</a>
-
-        <a href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a>
-        <a href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
-        <br><br>
-    {% endfor %}
+    </div>
 </body>
 </html>

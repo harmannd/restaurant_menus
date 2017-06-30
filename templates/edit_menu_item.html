@@ -6,20 +6,21 @@
 <body>
     <h1>Edit Menu Item</h1>
 
-    <form action="#" method="post">
+    <form action="{{ url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=menu_id) }}" method="post">
         <label>Name: </label>
-        <input type="text" name="name" placeholder={{item.name}}>
+        <input type="text" name="name" value="{{ item.name }}">
 
         <label>Price: </label>
-        <input type="text" name="price" placeholder={{item.price}}>
+        <input type="text" name="price" value="{{ item.price }}">
 
         <label>Description: </label>
-        <input type="text" name="description" placeholder={{item.description}}>
+        <input type="text" name="description" value="{{ item.description }}">
 
         <label>Course: </label>
-        <input type="text" name="course" placeholder={{item.course}}>
+        <input type="text" name="course" value="{{ item.course }}">
 
         <input type="submit" value="Submit">
+        <a href="{{ url_for('showMenu', restaurant_id=restaurant_id) }}">Cancel</a>
     </form>
 </body>
 </html>
